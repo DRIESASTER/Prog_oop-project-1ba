@@ -1,0 +1,16 @@
+.rodeText{
+    -fx-text-fill: RED;
+    -fx-font-size: 14;
+    -fx-padding: 10;
+}
+
+.textKleur{
+    -fx-fill: #ffffff;
+    -fx-text-alignmentalignment: CENTER;
+}
+
+BorderPane {
+    -fx-padding: 15;
+    -fx-font-size: 18;
+    -fx-background-color: #b594c0;
+}

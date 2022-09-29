@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.TextFlow?>
+
+<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <Label fx:id="correctie" alignment="CENTER" prefHeight="23.0" prefWidth="238.0" text="Label" textAlignment="CENTER" BorderPane.alignment="CENTER" />
+   </top>
+   <center>
+      <VBox alignment="TOP_CENTER" prefHeight="227.0" prefWidth="560.0" BorderPane.alignment="TOP_CENTER">
+         <children>
+            <TextFlow fx:id="vraag" prefHeight="78.0" prefWidth="560.0" />
+            <ImageView fx:id="afbeelding" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </VBox>
+   </center>
+   <bottom>
+      <GridPane fx:id="choices" prefHeight="111.0" prefWidth="560.0" vgap="5.0" BorderPane.alignment="TOP_LEFT">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="265.0" minWidth="10.0" prefWidth="81.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="459.0" minWidth="10.0" prefWidth="459.0" />
+        </columnConstraints>
+      </GridPane>
+   </bottom>
+   <stylesheets>
+      <URL value="@../viewer/fxml/css/Mcs.css" />
+      <URL value="@../viewer/fxml/css/general.css" />
+   </stylesheets>
+</BorderPane>

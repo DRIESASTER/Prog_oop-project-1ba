@@ -1,0 +1,19 @@
+Button {
+    -fx-padding: 1em 1em;
+    -fx-font-size: 15px;
+    -jfx-button-type: raised;
+    -fx-background-color: rgb(179, 0, 203);
+    -fx-pref-width: 50;
+    -fx-text-fill: WHITE;
+}
+
+GridPane{
+    -fx-padding: 10;
+}
+
+.keuzeText{
+    -fx-fill: WHITE;
+    -fx-padding: 10;
+}
+
+

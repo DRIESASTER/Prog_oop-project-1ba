@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="520.0" minWidth="720.0" prefHeight="504.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <GridPane fx:id="mainPane" hgap="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="493.0" prefWidth="720.0" vgap="5.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="296.0" minWidth="10.0" prefWidth="268.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="467.0" minWidth="10.0" prefWidth="367.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="525.0" minHeight="10.0" prefHeight="459.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="175.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TableView fx:id="tabel" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="459.0" prefWidth="298.0">
+               <columns>
+                  <TableColumn fx:id="titelKolom" minWidth="0.0" prefWidth="120.0" text="Titel" />
+                  <TableColumn fx:id="typeKolom" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="175.0" text="Type" />
+               </columns>
+            </TableView>
+            <VBox fx:id="rechterhelft" alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" prefHeight="462.0" prefWidth="419.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <children>
+                  <GridPane fx:id="rechterBovenkant" hgap="5.0" maxHeight="1.7976931348623157E308" prefHeight="172.0" prefWidth="414.0" vgap="5.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="146.0" minWidth="10.0" prefWidth="68.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="375.0" minWidth="10.0" prefWidth="351.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="14.0" vgrow="NEVER" />
+                        <RowConstraints maxHeight="82.0" minHeight="10.0" prefHeight="29.0" vgrow="NEVER" />
+                      <RowConstraints maxHeight="94.0" minHeight="10.0" prefHeight="94.0" vgrow="NEVER" />
+                      <RowConstraints fx:id="afbeeldingRij" maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="ALWAYS" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Titel" />
+                        <Label text="Afbeelding" GridPane.rowIndex="3" />
+                        <Label alignment="TOP_LEFT" text="Tekst" GridPane.rowIndex="2" GridPane.valignment="TOP" />
+                        <TextField fx:id="titel" prefHeight="26.0" prefWidth="370.0" GridPane.columnIndex="1" GridPane.vgrow="NEVER" />
+                        <Label fx:id="type" text="VraagSoort" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextArea fx:id="tekst" prefWidth="200.0" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <VBox fx:id="afbeeldingBox" maxHeight="1.7976931348623157E308" prefWidth="346.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS" />
+                     </children>
+                  </GridPane>
+                  <Label fx:id="emptyIndicator" alignment="CENTER" prefWidth="143.0" text="(geen vraag geselecteerd)" VBox.vgrow="NEVER" />
+                  <VBox fx:id="partBox" maxHeight="1.7976931348623157E308" minHeight="-Infinity" prefHeight="120.0" prefWidth="414.0" VBox.vgrow="ALWAYS" />
+               </children>
+            </VBox>
+            <HBox alignment="CENTER_RIGHT" prefHeight="121.0" prefWidth="296.0" GridPane.rowIndex="1">
+               <children>
+                  <Button fx:id="vraagToevoegenButton" mnemonicParsing="false" onAction="#vraagToevoegen" text="Vraag toevoegen" />
+                  <Button fx:id="vraagVerwijderen" mnemonicParsing="false" onAction="#vraagVerwijderen" text="Vraag verwijderen" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <Button fx:id="opslaanButton" mnemonicParsing="false" onAction="#opslaan" text="Opslaan" />
+                  <Button fx:id="herstelButton" mnemonicParsing="false" onAction="#herstellen" text="Herstellen" />
+                  <Button fx:id="previewKnop" mnemonicParsing="false" onAction="#preview" onMouseExited="#closePreview" onMousePressed="#preview" onMouseReleased="#closePreview" text="Preview" />
+               </children>
+            </HBox>
+         </children>
+      </GridPane>
+   </center>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Bestand">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#open" text="Open een bestaande databank">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+              <MenuItem mnemonicParsing="false" onAction="#nieuw" text="Maak een nieuwe databank aan">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#exitProgram" text="Exit">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="Q" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>

@@ -1,0 +1,9 @@
+
+
+Button {
+    -fx-padding: 1em 1em;
+    -fx-font-size: 15px;
+    -jfx-button-type: raised;
+    -fx-background-color: rgb(179, 0, 203);
+    -fx-text-fill: WHITE;
+}

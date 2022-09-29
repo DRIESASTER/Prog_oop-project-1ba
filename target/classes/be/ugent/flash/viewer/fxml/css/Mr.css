@@ -1,0 +1,26 @@
+.check-box .box {
+
+    -fx-background-color: #c3b2cb;;
+    -fx-border-color: rgb(179, 0, 203);;
+    -fx-border-radius:3px;
+
+}
+
+.check-box:selected .mark {
+
+    -fx-background-color: white;
+
+}
+
+.check-box:selected .box {
+
+    -fx-background-color: rgb(179, 0, 203);
+}
+
+Button {
+    -fx-padding: 0.5em 0.5em;
+    -fx-font-size: 15px;
+    -jfx-button-type: raised;
+    -fx-background-color: rgb(179, 0, 203);
+    -fx-text-fill: WHITE;
+}
